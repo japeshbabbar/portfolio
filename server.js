@@ -41,7 +41,7 @@ function enhanceResponse(res) {
 
 const server = http.createServer(async (req, res) => {
   enhanceResponse(res);
-  const parsedUrl = url.parse(req.url, true);
+  const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost:3000'}`);
   const pathname = parsedUrl.pathname;
 
   // CORS headers for local development
