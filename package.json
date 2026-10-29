@@ -4,8 +4,8 @@
   "private": true,
   "description": "Personal developer portfolio of Japesh Babbar with live LeetCode & GitHub statistics powered by Vercel Serverless Functions.",
   "scripts": {
-    "dev": "vercel dev",
-    "deploy": "vercel --prod"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "keywords": [
     "portfolio",
