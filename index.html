@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Japesh Babbar · Computer Science Student</title>
+  <meta name="description"
+    content="Japesh Babbar, B.Tech CSE student at GTBIT (GGSIPU), Delhi. Machine learning, document AI and problem solving, with live LeetCode and GitHub stats.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F4F6FB;
+      --ink: #0F172A;
+      --slate: #55607A;
+      --cobalt: #2B44FF;
+      --mist: #E3E8F4;
+      --white: #fff;
+      --h0: #E3E8F4;
+      --h1: #C3CCFF;
+      --h2: #8B9BFF;
+      --h3: #5468FF;
+      --h4: #2B44FF
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font: 400 1.0625rem/1.65 "DM Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      line-height: 1.05;
+      letter-spacing: -.03em
+    }
+
+    a {
+      color: inherit
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--cobalt);
+      outline-offset: 3px;
+      border-radius: 4px
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem)
+    }
+
+    section {
+      padding: clamp(3.5rem, 8vw, 6.5rem) 0
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 800;
+      margin-bottom: 2rem
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(244, 246, 251, .88);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--mist)
+    }
+
+    nav .wrap {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      height: 60px;
+      overflow-x: auto;
+      white-space: nowrap
+    }
+
+    nav b {
+      font: 800 1.1rem "Bricolage Grotesque", sans-serif;
+      margin-right: auto
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--slate);
+      font-size: .95rem;
+      font-weight: 500
+    }
+
+    nav a:hover {
+      color: var(--cobalt)
+    }
+
+    /* hero */
+    .hero {
+      padding-top: clamp(3rem, 9vw, 7rem)
+    }
+
+    .hero h1 {
+      font-size: clamp(3.4rem, 12.5vw, 10.5rem);
+      font-weight: 800;
+      letter-spacing: -.055em;
+      line-height: .9
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--cobalt)
+    }
+
+    .lede {
+      max-width: 34em;
+      margin: 2rem 0;
+      font-size: 1.25rem;
+      color: var(--slate)
+    }
+
+    .btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem
+    }
+
+    .btn {
+      padding: .8rem 1.4rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      transition: .2s
+    }
+
+    .btn.main {
+      background: var(--ink);
+      color: var(--white)
+    }
+
+    .btn:hover {
+      background: var(--cobalt);
+      border-color: var(--cobalt);
+      color: var(--white)
+    }
+
+    .live {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0;
+      margin-top: clamp(3rem, 7vw, 5rem);
+      border-top: 2px solid var(--ink)
+    }
+
+    .live div {
+      padding: 1.25rem 1.25rem 0 0
+    }
+
+    .live strong {
+      display: block;
+      font: 800 clamp(3rem, 6vw, 4.75rem)/1 "Bricolage Grotesque", sans-serif;
+      letter-spacing: -.04em;
+      font-variant-numeric: tabular-nums
+    }
+
+    .live small {
+      color: var(--slate);
+      font-size: .95rem
+    }
+
+    .dot {
+      display: inline-block;
+      width: .55rem;
+      height: .55rem;
+      border-radius: 50%;
+      background: #16a34a;
+      margin-right: .4rem;
+      animation: p 2s infinite
+    }
+
+    @keyframes p {
+      50% {
+        opacity: .25
+      }
+    }
+
+    /* stats */
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem
+    }
+
+    @media(min-width:900px) {
+      .stats {
+        grid-template-columns: 1.15fr 1fr
+      }
+    }
+
+    .panel {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 24px;
+      padding: clamp(1.25rem, 3vw, 2rem);
+      min-width: 0
+    }
+
+    .panel h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem
+    }
+
+    .panel h3 a {
+      font: 500 .9rem "DM Sans";
+      color: var(--cobalt)
+    }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr 2.5rem;
+      gap: .75rem;
+      align-items: center;
+      margin: .45rem 0;
+      font-size: .95rem
+    }
+
+    .bar i {
+      display: block;
+      height: 10px;
+      border-radius: 6px;
+      background: var(--mist);
+      overflow: hidden
+    }
+
+    .bar i b {
+      display: block;
+      height: 100%;
+      background: var(--cobalt);
+      border-radius: 6px;
+      width: 0;
+      transition: width 1.1s cubic-bezier(.2, .8, .2, 1)
+    }
+
+    .facts {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin: 1.25rem 0;
+      color: var(--slate);
+      font-size: .95rem
+    }
+
+    .facts b {
+      display: block;
+      color: var(--ink);
+      font: 800 1.6rem "Bricolage Grotesque";
+      letter-spacing: -.03em
+    }
+
+    .heat {
+      overflow-x: auto;
+      padding-bottom: .5rem
+    }
+
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(7, 11px);
+      grid-auto-columns: 11px;
+      gap: 3px;
+      width: max-content
+    }
+
+    .grid i {
+      border-radius: 2.5px;
+      background: var(--h0)
+    }
+
+    .grid .l1 {
+      background: var(--h1)
+    }
+
+    .grid .l2 {
+      background: var(--h2)
+    }
+
+    .grid .l3 {
+      background: var(--h3)
+    }
+
+    .grid .l4 {
+      background: var(--h4)
+    }
+
+    .langs {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 1rem 0 .5rem;
+      gap: 2px
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem 1rem;
+      font-size: .9rem;
+      color: var(--slate)
+    }
+
+    .legend i {
+      display: inline-block;
+      width: .6rem;
+      height: .6rem;
+      border-radius: 50%;
+      margin-right: .35rem
+    }
+
+    .repo {
+      display: block;
+      text-decoration: none;
+      padding: .9rem 0;
+      border-top: 1px solid var(--mist)
+    }
+
+    .repo:hover strong {
+      color: var(--cobalt)
+    }
+
+    .repo strong {
+      font-weight: 500
+    }
+
+    .repo span {
+      display: block;
+      color: var(--slate);
+      font-size: .92rem
+    }
+
+    .err {
+      color: var(--slate)
+    }
+
+    /* projects */
+    .proj {
+      display: grid;
+      gap: 1.5rem;
+      padding: 2.5rem 0;
+      border-top: 2px solid var(--ink)
+    }
+
+    @media(min-width:900px) {
+      .proj {
+        grid-template-columns: 1fr 1.3fr;
+        gap: 4rem
+      }
+    }
+
+    .proj h3 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800
+    }
+
+    .proj p.kind {
+      color: var(--slate);
+      margin: .5rem 0 1.25rem
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      list-style: none;
+      padding: 0
+    }
+
+    .chips li {
+      padding: .25rem .8rem;
+      border-radius: 999px;
+      background: var(--mist);
+      font-size: .9rem;
+      font-weight: 500
+    }
+
+    .proj ul.pts {
+      padding-left: 1.1rem;
+      max-width: 40em
+    }
+
+    .pts li {
+      margin-bottom: .6rem
+    }
+
+    .proj .lnk {
+      display: inline-block;
+      margin-top: .75rem;
+      color: var(--cobalt);
+      font-weight: 500
+    }
+
+    /* timeline */
+    .tl {
+      display: grid;
+      gap: 1rem
+    }
+
+    .tl>div {
+      display: grid;
+      gap: .25rem 2rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--ink)
+    }
+
+    @media(min-width:760px) {
+      .tl>div {
+        grid-template-columns: 11rem 1fr
+      }
+    }
+
+    .tl time {
+      color: var(--slate);
+      font-variant-numeric: tabular-nums
+    }
+
+    .tl h3 {
+      font-size: 1.4rem;
+      font-weight: 800
+    }
+
+    .two {
+      display: grid;
+      gap: 3rem
+    }
+
+    @media(min-width:900px) {
+      .two {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .skills dt {
+      font-weight: 500;
+      margin-top: 1.1rem
+    }
+
+    .skills dd {
+      color: var(--slate)
+    }
+
+    .ach {
+      padding: 0;
+      list-style: none
+    }
+
+    .ach li {
+      padding: .9rem 0;
+      border-top: 1px solid var(--mist)
+    }
+
+    .ach b {
+      font-weight: 500
+    }
+
+    .contact h2 {
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      letter-spacing: -.05em
+    }
+
+    .contact a.big {
+      font: 800 clamp(1.3rem, 3.2vw, 2.2rem) "Bricolage Grotesque";
+      text-decoration: none;
+      border-bottom: 3px solid var(--cobalt)
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem
+    }
+
+    footer {
+      padding: 2rem 0;
+      color: var(--slate);
+      font-size: .9rem;
+      border-top: 1px solid var(--mist)
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="wrap"><b>Japesh Babbar</b><a href="#stats">Live stats</a><a href="#projects">Projects</a><a
+        href="#background">Background</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero wrap">
+    <h1>Japesh <span>Babbar</span></h1>
+    <p class="lede">Computer science student at GTBIT (GGSIPU), Delhi. I build machine learning and document
+      verification systems in Python, and I practise data structures and algorithms on LeetCode.</p>
+    <div class="btns">
+      <a class="btn main" href="resume.pdf" download>Download resume</a>
+      <a class="btn" href="https://github.com/japeshbabbar" rel="noopener">GitHub</a>
+      <a class="btn" href="https://leetcode.com/u/japeshbabbar/" rel="noopener">LeetCode</a>
+      <a class="btn" href="mailto:japeshbabbar63@gmail.com">Email me</a>
+    </div>
+    <div class="live" aria-live="polite">
+      <div><strong id="n-solved">–</strong><small><span class="dot"></span>LeetCode problems solved</small></div>
+      <div><strong id="n-contrib">–</strong><small><span class="dot"></span>GitHub contributions, last year</small>
+      </div>
+      <div><strong id="n-repos">–</strong><small><span class="dot"></span>Public repositories</small></div>
+    </div>
+  </header>
+
+  <section id="stats">
+    <div class="wrap">
+      <h2>Progress, updated live</h2>
+      <div class="stats">
+        <div class="panel" id="lc">
+          <h3>LeetCode <a href="https://leetcode.com/u/japeshbabbar/" rel="noopener">Open profile</a></h3>
+          <p class="err">Loading stats…</p>
+        </div>
+        <div class="panel" id="gh">
+          <h3>GitHub <a href="https://github.com/japeshbabbar" rel="noopener">Open profile</a></h3>
+          <p class="err">Loading stats…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <!-- Replace each href with the project's own repository or live demo URL. -->
+      <article class="proj">
+        <div>
+          <h3>RECTIF-AI</h3>
+          <p class="kind">AI-powered document verification engine, built at Vihaan 9.0, DTU</p>
+          <ul class="chips">
+            <li>Python</li>
+            <li>EasyOCR</li>
+            <li>PyTesseract</li>
+            <li>RapidFuzz</li>
+            <li>FastAPI</li>
+            <li>Gemini API</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="pts">
+            <li>Pipeline that combines OCR, document classification, regex-based extraction and cross-document identity
+              validation.</li>
+            <li>Fuzzy string matching flags possible name mismatches across identity and property documents.</li>
+            <li>Compliance checks for selected property-registration rules and identity-document formats, with
+              verification flags and a downloadable PDF report.</li>
+            <li>Gemini-powered assistant, plus synthetic document samples so development and testing don't depend on
+              real personal data.</li>
+          </ul>
+          <a class="lnk" href="https://github.com/japeshbabbar" rel="noopener">View code on GitHub</a>
+        </div>
+      </article>
+      <article class="proj">
+        <div>
+          <h3>Loan Prediction System</h3>
+          <p class="kind">Machine learning classification with full exploratory analysis</p>
+          <ul class="chips">
+            <li>Python</li>
+            <li>Jupyter Notebook</li>
+            <li>Scikit-learn</li>
+            <li>Pandas</li>
+            <li>Matplotlib</li>
+            <li>Seaborn</li>
+          </ul>
+        </div>
+        <div>
+          <ul class="pts">
+            <li>Exploratory data analysis with count plots, box plots, pie charts, bar graphs and violin plots.</li>
+            <li>Found class imbalance, the spread of income, the weight of credit history and outliers in loan amount.
+            </li>
+            <li>Trained Logistic Regression, Decision Tree and Random Forest models and compared them by accuracy score
+              and confusion matrix.</li>
+          </ul>
+          <a class="lnk" href="https://github.com/japeshbabbar" rel="noopener">View code on GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="background">
+    <div class="wrap">
+      <div class="two">
+        <div>
+          <h2>Experience and education</h2>
+          <div class="tl">
+            <div><time>09/2025 – Present</time>
+              <div>
+                <h3>Coordinator</h3>IEEE GTBIT Student Branch<br><span class="err">Plan and run technical events with
+                  student teams.</span>
+              </div>
+            </div>
+            <div><time>08/2025 – 08/2029</time>
+              <div>
+                <h3>B.Tech, Computer Science Engineering</h3>Guru Tegh Bahadur Institute of Technology (GGSIPU)
+              </div>
+            </div>
+            <div><time>06/2023 – 05/2025</time>
+              <div>
+                <h3>Class 12, Science</h3>Chaudhary Baldev Singh Model School, Delhi
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2>Skills</h2>
+          <dl class="skills">
+            <dt>Languages</dt>
+            <dd>C++, Python, JavaScript</dd>
+            <dt>Core</dt>
+            <dd>Data Structures &amp; Algorithms, OOP, DBMS</dd>
+            <dt>Web development</dt>
+            <dd>HTML, CSS, React.js, Node.js</dd>
+            <dt>Libraries and frameworks</dt>
+            <dd>NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn</dd>
+            <dt>Tools</dt>
+            <dd>Git, GitHub, Jupyter Notebook</dd>
+          </dl>
+        </div>
+      </div>
+      <h2 style="margin-top:4rem">Achievements and activities</h2>
+      <ul class="ach">
+        <li><b>Problem solving.</b> Solved 200+ coding problems across programming platforms.</li>
+        <li><b>Smart India Hackathon 2026.</b> Qualified through the internal selection round.</li>
+        <li><b>Vihaan 9.0, DTU.</b> Hackathon participant; developed RECTIF-AI.</li>
+        <li><b>Hacktoberfest 2026.</b> Took part in the open-source contribution initiative.</li>
+        <li><b>Xploit, Xpecto'26, IIT Mandi.</b> Participated in the technical event.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Let's talk.</h2>
+      <a class="big" href="mailto:japeshbabbar63@gmail.com">japeshbabbar63@gmail.com</a>
+      <div class="links">
+        <a href="tel:+917015436700">+91 70154 36700</a>
+        <a href="https://github.com/japeshbabbar" rel="noopener">GitHub</a>
+        <a href="https://leetcode.com/u/japeshbabbar/" rel="noopener">LeetCode</a>
+        <!-- Replace YOUR-HANDLE with your LinkedIn username. -->
+        <a href="https://www.linkedin.com/in/japesh-babbar-673509374/" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">Japesh Babbar · Delhi, India</div>
+  </footer>
+
+  <script>
+    const $ = s => document.querySelector(s), reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e };
+    const get = u => fetch(u).then(r => { if (!r.ok) throw 0; return r.json() });
+    function count(n, to) { if (reduce) { n.textContent = to; return } const t0 = performance.now(); (function f(t) { const p = Math.min((t - t0) / 1300, 1); n.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f) })(t0) }
+    function heat(map) {
+      const box = el('div', 'heat'), g = el('div', 'grid'), DAY = 864e5, now = new Date(), end = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+      for (let t = end - 364 * DAY - new Date(end).getUTCDay() * DAY; t <= end; t += DAY) {
+        const k = new Date(t).toISOString().slice(0, 10), n = map[k] || 0, c = el('i', n ? 'l' + (n < 2 ? 1 : n < 4 ? 2 : n < 7 ? 3 : 4) : '');
+        c.title = n + ' on ' + k; g.append(c)
+      }
+      box.append(g); return box
+    }
+    function fail(p, msg) { p.querySelector('.err').textContent = msg }
+    get('/api/leetcode').then(d => {
+      const p = $('#lc'), all = d.solved.All || 0; p.querySelector('.err').remove();
+      count($('#n-solved'), all);
+      ['Easy', 'Medium', 'Hard'].forEach(k => {
+        const v = d.solved[k] || 0, b = el('div', 'bar'); b.append(el('span', 0, k), el('i'), el('span', 0, v));
+        b.querySelector('i').append(el('b')); p.append(b); requestAnimationFrame(() => setTimeout(() => b.querySelector('b').style.width = (all ? v / all * 100 : 0) + '%', 60))
+      });
+      const f = el('div', 'facts');
+      [['Current streak', d.streak + ' days'], ['Active days', d.activeDays]].concat(d.rating ? [['Contest rating', d.rating]] : []).forEach(([l, v]) => { const x = el('div'); x.append(el('b', 0, v), l); f.append(x) });
+      p.append(f, heat(d.calendar));
+    }).catch(() => fail($('#lc'), "Couldn't load LeetCode stats. Open the profile for the latest numbers."));
+    get('/api/github').then(d => {
+      const p = $('#gh'); p.querySelector('.err').remove(); count($('#n-repos'), d.repos);
+      if (d.contributions) { count($('#n-contrib'), d.contributions.total); p.append(heat(d.contributions.days)) }
+      else $('#n-contrib').closest('div').hidden = true;
+      const tot = Object.values(d.langs).reduce((a, b) => a + b, 0), cols = ['#2B44FF', '#5468FF', '#8B9BFF', '#C3CCFF', '#0F172A', '#55607A'], bar = el('div', 'langs'), lg = el('div', 'legend');
+      Object.entries(d.langs).sort((a, b) => b[1] - a[1]).slice(0, 6).forEach(([l, n], i) => {
+        const s = el('i'); s.style.cssText = 'flex:' + n + ';background:' + cols[i]; bar.append(s);
+        const w = el('span'); const dot = el('i'); dot.style.background = cols[i]; w.append(dot, l + ' ' + Math.round(n / tot * 100) + '%'); lg.append(w)
+      });
+      if (tot) p.append(bar, lg);
+      const rl = el('div'); rl.style.marginTop = '1.25rem';
+      d.top.slice(0, 4).forEach(r => { const a = el('a', 'repo'); a.href = r.url; a.rel = 'noopener'; a.append(el('strong', 0, r.name), el('span', 0, r.desc || r.lang || 'Repository')); rl.append(a) });
+      p.append(rl);
+    }).catch(() => { fail($('#gh'), "Couldn't load GitHub stats. Open the profile for the latest activity."); $('#n-contrib').closest('div').hidden = true });
+  </script>
+</body>
+
+</html>

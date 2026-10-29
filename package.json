@@ -1,0 +1,21 @@
+{
+  "name": "japesh-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal developer portfolio of Japesh Babbar with live LeetCode & GitHub statistics powered by Vercel Serverless Functions.",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "developer-portfolio",
+    "leetcode-api",
+    "github-api",
+    "machine-learning",
+    "serverless",
+    "vercel"
+  ],
+  "author": "Japesh Babbar <japeshbabbar63@gmail.com>",
+  "license": "MIT"
+}
